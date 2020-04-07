@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace hw2
+namespace hw2  
 {
     class Program
     {
@@ -9,7 +10,7 @@ namespace hw2
                Converter money = new Converter();
              money.Валюта( );
           
-            Employee emplo = new Employee(); 
+               Employee emplo = new Employee(); 
           
              emplo.infoAboutEmployee("Воздухан","Пайрав","Типа Программист","5 лет",3000,0.14);
 
@@ -79,10 +80,28 @@ namespace hw2
         
             }
            System.Console.WriteLine("---------------------");
+        }
+    }
+            //Задание 2
+           
+      class Employee 
+      {
+        public string name {get;set;}
+        public string SureName{get;set;}
+        
+        public Employee()
+        {
 
         }
+        public void infoAboutEmployee(string name, string SureName,string occupation, string experience,double salary,double tax)
+        {
+          double SalaryBeforeTax = salary*tax;
+          double SalaryAfterTax=salary-SalaryBeforeTax;
 
-    }               
-          
+          System.Console.WriteLine($"Name: {name}\nSureName: {SureName}\nOccupation: {occupation}\nExperience: {experience}\nSalary: {salary} som\nSalaruAfterTax: {SalaryAfterTax} som");
+           System.Console.WriteLine("---------------------");
         }
-    
+
+      }
+    }
+
